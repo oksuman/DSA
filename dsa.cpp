@@ -5,7 +5,6 @@
 #include <openssl/sha.h>
 #include <cstring>
      
-
 using namespace std;
 using namespace NTL;
 
@@ -68,8 +67,6 @@ public:
         ZZ u2 = MulMod(w,r,q);
         ZZ v = AddMod(MulMod(PowerMod(a,u1,p),PowerMod(b,u2,p),p),0,q);
         
-        // cout << "v = " << v << endl;
-        // cout << "r = " << r << endl;
         if(v == r) 
             return true;
         else
@@ -78,24 +75,6 @@ public:
     
 };
 
-
-// void hextodecimal(const unsigned char * digest, const int length)
-// {
-//     ZZ num = ZZ(0);
-//     ZZ count = ZZ(1);
-    
-//     for(int i = 1; i <=length ; i++)
-//     {
-//         if('A'<= digest[length - i] && digest[length - i] <= 'Z')
-//             num += count * (digest[length - i] - 'A' + 10);
-
-//         else
-//             num += count * (digest[length - i] - '0');
-
-//         count = count * 16;
-//     }
-//     cout << "num = " << num << endl;
-// }
 
 int main(int argc, char **argv)
 {
